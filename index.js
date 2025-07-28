@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const db = require('./database'); // Import MySQL connection
+const db = require('./database'); 
 const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // required for form data
+app.use(express.urlencoded({ extended: true })); 
 
 
 app.post('/api/login', (req, res) => {
@@ -143,10 +143,6 @@ app.get('/api/masterselect', (req, res) => {
 });
 
 
-
-
-
-// Example route: add user
 app.post('/api/users', (req, res) => {
     const data = req.body;
     const database = data.database;
@@ -160,7 +156,7 @@ app.post('/api/users', (req, res) => {
     });
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
